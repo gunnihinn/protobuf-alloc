@@ -189,6 +189,8 @@ func (m *Foo) Unmarshal(dAtA []byte) error {
 				if postIndex > l {
 					return io.ErrUnexpectedEOF
 				}
+
+				m.Stuff = make([]int64, 0, postIndex-iNdEx+1)
 				for iNdEx < postIndex {
 					var v int64
 					for shift := uint(0); ; shift += 7 {
